@@ -11,7 +11,8 @@ Using state of the art DecTalk technology Dennis can synthisize a realistic Denn
 
 "Dennis will Shiminheizer your downpour" - Username \
 "Dennis changed my life. Ever since he first called me bitch I knew he was special." - Frying1Pans \
-"As soon as I installed Dennis, my pregnancy disappeared!" - Klheba
+"As soon as I installed Dennis, my pregnancy disappeared!" - Klheba \
+"I've had Dennis installed for the better part of two years, I yam physically incapable of registering the phrase Dennis as a name, nor a sound, it is just silence now." - Scoman
 
 ## How to build
 
