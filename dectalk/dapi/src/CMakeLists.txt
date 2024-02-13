@@ -1,0 +1,190 @@
+# Dennis Enhanced Edition - Copyright Aarik 2024 - All rights reserved #
+# Dectalk library, used to compile to dtspeak.lib
+
+cmake_minimum_required(VERSION 3.20)
+
+project(DecTalk)
+
+file(GLOB_RECURSE DECTALK_SOURCE
+	"hlsyn/acxf1c.c"
+	"hlsyn/brent.c"
+	"hlsyn/circuit.c"
+	"Cmd/cm_char.c"
+	"Cmd/cm_cmd.c"
+	"Cmd/cm_copt.c"
+	"Cmd/cm_main.c"
+	"Cmd/cm_pars.c"
+	"Cmd/cm_phon.c"
+	"Cmd/cm_text.c"
+	"Cmd/cm_util.c"
+	"Cmd/Cmd_init.c"
+	"Cmd/cmd_wav.c"
+	"Api/Crypt2.c"
+	"NT/dbgwins.c"
+	"Api/Decstd97.c"
+	"dectalk.def"
+	"hlsyn/diffuse.c"
+	"hlsyn/fixfft32.c"
+	"hlsyn/frame.c"
+	"hlsyn/hlframe.c"
+	"hlsyn/inithl.c"
+	"hlsyn/llinit.c"
+	"Lts/loaddict.c"
+	"hlsyn/log10table.c"
+	"Lts/ls_chari.c"
+	"Lts/ls_dict.c"
+	"Lts/ls_homo.c"
+	"Lts/ls_math.c"
+	"Lts/ls_proc.c"
+	"Lts/ls_spel.c"
+	"Lts/ls_speli.c"
+	"Lts/ls_suff.c"
+	"Lts/ls_suffi.c"
+	"Lts/Lsa_adju.c"
+	"Lts/lsa_coni.c"
+	"Lts/lsa_fr.c"
+	"Lts/lsa_gr.c"
+	"Lts/lsa_ir.c"
+	"Lts/lsa_it.c"
+	"Lts/lsa_ja.c"
+	"Lts/lsa_rtbi.c"
+	"Lts/lsa_rule.c"
+	"Lts/lsa_sl.c"
+	"Lts/lsa_sp.c"
+	"Lts/lsa_task.c"
+	"Lts/lsa_us.c"
+	"Lts/lsa_util.c"
+	"Lts/lsw_main.c"
+	"Nt/mmalloc.c"
+	"hlsyn/nasalf1x.c"
+	"Nt/opthread.c"
+	"Cmd/par_ambi.c"
+	"Cmd/par_char.c"
+	"Cmd/par_dict.c"
+	"Cmd/par_pars.c"
+	"Cmd/par_rule.c"
+	"Ph/ph_aloph.c"
+	"Ph/ph_claus.c"
+	"Ph/ph_draw.c"
+	"Ph/ph_drwt0.c"
+	"Ph/ph_inton.c"
+	"Ph/ph_main.c"
+	"Ph/ph_romi.c"
+	"Ph/ph_setar.c"
+	"Ph/ph_sort.c"
+	"Ph/ph_syl.c"
+	"Ph/ph_syntx.c"
+	"Ph/ph_task.c"
+	"Ph/ph_timng.c"
+	"Ph/ph_vdefi.c"
+	"Ph/ph_vset.c"
+	"Ph/phinit.c"
+	"Ph/phlog.c"
+	"Ph/phprint.c"
+	"Nt/pipe.c"
+	"Nt/playaud.c"
+	"Vtm/playtone.c"
+	"hlsyn/reson.c"
+	"hlsyn/sample.c"
+	"Kernel/services.c"
+	"Nt/spc.c"
+	"hlsyn/sqrttable.c"
+	"Vtm/sync.c"
+	"Api/ttsapi.c"
+	"Kernel/Usa_init.c"
+	"hlsyn/voice.c"
+	"Vtm/vtm.c"
+	"Vtm/vtmiont.c"
+	"LTS/ls_adju.c"
+)
+source_group("Source Files/" FILES ${DECTALK_SOURCE})
+
+file(GLOB_RECURSE DECTALK_HEADERS
+	"include/186.h"
+	"include/audioapi.h"
+	"Include/Audiodef.h"
+	"Cmd/Cm_copt.h"
+	"Cmd/Cm_util.h"
+	"include/cmd.h"
+	"nt/dbgwins.h"
+	"include/dectalk.h"
+	"include/defs.h"
+	"include/esc.h"
+	"include/ger_def.h"
+	"include/ger_err.tab"
+	"include/ger_phon.tab"
+	"include/ger_type.tab"
+	"include/hardw.h"
+	"include/iso_char.h"
+	"include/kernel.h"
+	"Include/L_com_ph.h"
+	"Include/L_gr_ph.h"
+	"Include/L_sp_ph.h"
+	"Include/L_us_ph.h"
+	"Lts/Ls_dict.h"
+	"include/ls_feat.tab"
+	"include/ls_fold.tab"
+	"Lts/Ls_homo.h"
+	"include/ls_lower.tab"
+	"include/ls_upper.tab"
+	"nt/mmalloc.h"
+	"include/mulawi.h"
+	"nt/opthread.h"
+	"Cmd/par_rule.h"
+	"include/pcport.h"
+	"Include/Pipe.h"
+	"nt/playaud.h"
+	"include/port.h"
+	"include/spa_def.h"
+	"include/spa_err.tab"
+	"include/spa_phon.tab"
+	"include/spa_type.tab"
+	"api/ttsapi.h"
+	"include/usa_def.h"
+	"include/usa_err.tab"
+	"include/usa_phon.tab"
+	"include/usa_type.tab"
+	"include/version.h"
+	"Vtm/Vtm.h"
+)
+source_group("Headers/" FILES ${DECTALK_HEADERS})
+
+add_library(DecTalk STATIC 
+	${DECTALK_SOURCE}
+	${DECTALK_HEADERS}
+)
+
+target_include_directories(DecTalk PUBLIC
+	"../.."
+	"./acna"
+	"./api"
+	"./cmd"
+	"./lts"
+	"./ph"
+	"./vtm"
+	"./kernel"
+	"./nt"
+	"./include"
+	"./protos"
+)
+
+add_compile_definitions(DecTalk "ENGLISH_US;ENGLISH;ACNA;BLD_DECTALK_DLL;STATIC_BUILD")
+
+set_property(TARGET DecTalk PROPERTY COMPILE_WARNING_AS_ERROR OFF)
+
+# Giant wall of warnings. This is an old version of dectalk after all.
+target_compile_definitions(DecTalk PUBLIC 
+	"/wd4013" "/wd4018" "/wd4028" "/wd4047" "/wd4057" "/wd4090" "/wd4100"
+	"/wd4101" "/wd4102" "/wd4115" "/wd4127" "/wd4133" "/wd4189" "/wd4206"
+	"/wd4210" "/wd4213" "/wd4244" "/wd4245" "/wd4293" "/wd4431" "/wd4554"
+	"/wd4700" "/wd4701" "/wd4702" "/wd4703" "/wd4706" "/wd4715" "/wd4716"
+)
+
+foreach( OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES} )
+	string( TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG )
+	set_target_properties( DecTalk
+		PROPERTIES
+		ARCHIVE_OUTPUT_DIRECTORY_${OUTPUTCONFIG} "${DENNIS_LIB_DIR}"
+		LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} "${DENNIS_LIB_DIR}"
+	)
+endforeach( OUTPUTCONFIG CMAKE_CONFIGURATION_TYPES )
