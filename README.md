@@ -10,7 +10,8 @@ Using state of the art DecTalk technology Dennis can synthisize a realistic Denn
 ## Customer testimonies
 
 "Dennis will Shiminheizer your downpour" - Username \
-"Dennis changed my life. Ever since he first called me bitch I knew he was special." - Frying1Pans
+"Dennis changed my life. Ever since he first called me bitch I knew he was special." - Frying1Pans \
+"As soon as I installed Dennis, my pregnancy disappeared!" - Klheba
 
 ## How to build
 
