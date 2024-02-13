@@ -4,12 +4,12 @@
 
 Dennis Enhanced Edition is an update to the popular Dennis desktop pet. 
 
-Created in 2022 Dennis kept people company on their computers by just being there and saying Dennis.
+Created in 2022 Dennis kept people company on their computers by just being there and saying Dennis. \
 Using state of the art DecTalk technology Dennis can synthisize a realistic Dennis like voice.
 
 ## Customer testimonies
 
-"Dennis will Shiminheizer your downpour" - Username
+"Dennis will Shiminheizer your downpour" - Username \
 "Dennis changed my life. Ever since he first called me bitch I knew he was special." - Frying1Pans
 
 ## How to build
