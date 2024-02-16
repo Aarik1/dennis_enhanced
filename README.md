@@ -14,6 +14,7 @@ Using state of the art DecTalk technology Dennis can synthisize a realistic Denn
 "As soon as I installed Dennis, my pregnancy disappeared!" - Klheba \
 "I've had Dennis installed for the better part of two years, I yam physically incapable of registering the phrase Dennis as a name, nor a sound, it is just silence now." - Scoman \
 "Dennis helped me dispose of several gigabytes of confidential information" - Kay
+"Dennis changed my life! My computer used to be so sad and lonely, but now Dennis is always there to say his name and call me a bitch!" - Glow
 
 ## How to build
 
